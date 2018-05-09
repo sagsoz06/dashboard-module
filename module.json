@@ -11,5 +11,8 @@
     "Modules\\Dashboard\\Providers\\RouteServiceProvider",
     "Modules\\Dashboard\\Providers\\WidgetServiceProvider"
   ],
+  "widgets": [
+    "Modules\\Dashboard\\Widgets\\CacheClearWidget"
+  ],
   "files": []
 }

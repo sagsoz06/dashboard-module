@@ -20,4 +20,9 @@ $router->group(['prefix' => '/dashboard'], function (Router $router) {
         'uses' => 'DashboardController@reset',
         'middleware' => 'can:dashboard.reset',
     ]);
+    $router->get('clear', [
+        'as' => 'dashboard.cache.clear',
+        'uses' => 'DashboardController@cacheClear',
+        'middleware' => 'can:dashboard.clear',
+    ]);
 });

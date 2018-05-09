@@ -116,4 +116,25 @@ class DashboardController extends AdminBaseController
         $this->assetPipeline->requireJs('chart.js');
         $this->assetPipeline->requireCss('gridstack.css')->before('asgard.css');
     }
+
+    public function cacheClear()
+    {
+        try
+        {
+            \Artisan::call('cache:clear');
+            \Artisan::call('view:clear');
+            \Artisan::call('clear-compiled');
+            \Artisan::call('optimize');
+            return Response::json([
+                'success' => true
+            ]);
+        }
+        catch (\Exception $exception)
+        {
+            return Response::json([
+                'success' => false,
+                'message' => $exception->getMessage()
+            ]);
+        }
+    }
 }
