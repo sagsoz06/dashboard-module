@@ -123,8 +123,6 @@ class DashboardController extends AdminBaseController
         {
             \Artisan::call('cache:clear');
             \Artisan::call('view:clear');
-            \Artisan::call('clear-compiled');
-            \Artisan::call('optimize');
             return Response::json([
                 'success' => true
             ]);
