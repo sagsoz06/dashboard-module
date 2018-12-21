@@ -20,7 +20,7 @@ class CacheClearWidget extends BaseWidget
 
     protected function view()
     {
-        return "dashboard::admin.widgets.cacheclear";
+        return "dashboard::admin.widgets.cache-clear";
     }
 
     protected function data()
